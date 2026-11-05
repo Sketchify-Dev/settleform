@@ -31,10 +31,11 @@ export default async function ConvertPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-5 pb-24 sm:px-8">
       <a href="#main" className="skip-link">Skip to content</a>
-      <header className="flex items-center justify-between gap-4 border-b border-rule py-5">
+      <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-rule py-5">
         <Logo />
         <nav aria-label="Convert" className="flex flex-none items-center gap-2">
           <Link href="/" className="btn-ghost hidden sm:inline-flex">Home</Link>
+          <Link href="/invoices" className="btn-ghost">Dashboard</Link>
           <Link href="/invoices/new" className="btn-ghost">New invoice</Link>
         </nav>
       </header>

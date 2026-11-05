@@ -188,8 +188,8 @@ export default function Home() {
 
           <section className="pt-9 sm:pt-12">
             <h1 className="display hero-h1">
-              <span className="block">Invoice a client, or convert it yourself.</span>{" "}
-              <span className="block">Either way, USDC lands on NEAR.</span>
+              <span className="sm:block">Invoice a client, or convert it yourself.</span>{" "}
+              <span className="sm:block">Either way, USDC lands on NEAR.</span>
             </h1>
             {/* No width cap: on desktop the paragraph fills the container and wraps
                 only when the line is full, instead of stacking as short lines. */}
@@ -199,8 +199,8 @@ export default function Home() {
               settles on NEAR in full view.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-4">
-              <Link href="/invoices/new" className="btn-primary">Create an invoice</Link>
-              <Link href="/convert" className="btn-ghost">Convert without an invoice</Link>
+              <Link href="/invoices/new" className="btn-primary w-full sm:w-auto">Create an invoice</Link>
+              <Link href="/convert" className="btn-ghost w-full sm:w-auto">Convert without an invoice</Link>
               <span className="hero-note">No funds needed to try it.</span>
             </div>
           </section>

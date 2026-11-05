@@ -925,20 +925,8 @@ export default function ConvertClient({ sources }: { sources: SourceOption[] }) 
               </li>
             ))}
           </ul>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              className="btn-ghost min-h-0 px-3 py-1.5 text-[12px]"
-              onClick={() =>
-                downloadCsv(
-                  "settleform-conversions.csv",
-                  CONVERSION_CSV_HEADER + "\n" + history.map(conversionCsvRow).join("\n") + "\n"
-                )
-              }
-            >
-              Download all as CSV
-            </button>
-            {history.length > HISTORY_PAGE_SIZE ? (
+          {history.length > HISTORY_PAGE_SIZE ? (
+            <div className="mt-4 flex flex-wrap items-center gap-3">
               <nav aria-label="Conversion history pages" className="flex items-center gap-2">
                 <button
                   type="button"
@@ -960,8 +948,8 @@ export default function ConvertClient({ sources }: { sources: SourceOption[] }) 
                   Older
                 </button>
               </nav>
-            ) : null}
-          </div>
+            </div>
+          ) : null}
         </div>
       </section>
     ) : null}

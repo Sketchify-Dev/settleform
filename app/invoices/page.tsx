@@ -64,9 +64,12 @@ async function InvoicesBody() {
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pb-20 sm:px-8">
       <a href="#main" className="skip-link">Skip to content</a>
-      <header className="flex items-center justify-between gap-4 border-b border-rule py-5">
+      <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-rule py-5">
         <Logo />
-        <Link href="/invoices/new" className="btn-primary">New invoice</Link>
+        <nav aria-label="Invoices" className="flex flex-none items-center gap-2">
+          <Link href="/convert" className="btn-ghost">Convert</Link>
+          <Link href="/invoices/new" className="btn-primary">New invoice</Link>
+        </nav>
       </header>
 
       <main id="main">

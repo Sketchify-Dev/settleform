@@ -875,8 +875,12 @@ main p {
     row-gap: 17px;
   }
 
+  /* The statement is authored as two printed lines. At the desktop size those
+     lines are wider than a phone, so the clamp floor has to come down with the
+     viewport or the headline runs past the frame it is set in. */
   .hero-h1 {
-    line-height: 1.05;
+    font-size: clamp(24px, 6.6vw, 32px);
+    line-height: 1.1;
   }
 
   /* On a phone the note wraps under the buttons, where a floating rule reads
