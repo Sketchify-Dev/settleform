@@ -8,6 +8,8 @@
 
 Invoice a client, or convert it yourself. Either way, USDC lands on NEAR.
 
+Live demo: https://settleform.vercel.app
+
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB)](https://react.dev/)
 [![Tailwind](https://img.shields.io/badge/Tailwind-4-38BDF8)](https://tailwindcss.com/)

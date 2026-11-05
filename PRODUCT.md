@@ -68,14 +68,14 @@ Stack constraint worth preserving: this repo runs Next.js 16.4.2, React 19.3, an
 Present and real:
 
 - Four quotes returned by the live 1Click API on 2026-11-02, recorded with their verification note in `data/supported-assets.json`: ETH and USDC on Base as EXACT_OUTPUT, USDC on Ethereum as same-chain family, wNEAR as both EXACT_INPUT and EXACT_OUTPUT.
-- A working application covering all eighteen acceptance criteria, runnable locally.
+- A working application covering all eighteen acceptance criteria, live at https://settleform.vercel.app.
 - One settled conversion, filed as the seed of the shared history: ETH to 0.5 USDC on 2026-11-04, with the deposit on Etherscan and the withdrawal to the named NEAR account on Nearblocks, both linked from the record.
 
 Absent, and not to be implied by any future surface:
 
 - No settled invoice exists. `data/invoices.json` holds one invoice, `UNPAID`, with no swap and no transaction reference. No invoice has reached PAID from a real deposit, because no pay link has been funded yet.
-- No deployed public URL is recorded.
-- No demo video or product screenshot exists yet. Captures can be taken from the running application.
+- Live at https://settleform.vercel.app.
+- No demo video exists yet. Product screenshots live in `docs/screenshots/`.
 
 Every proof surfaced in a design must be one of the items above. The four live quotes are the strongest available evidence; anything stronger must be produced before it is shown.
 

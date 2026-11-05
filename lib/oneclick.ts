@@ -26,7 +26,7 @@ export const ONECLICK_STATUS = "https://1click.chaindefuser.com/v0/status";
 const QUOTE_TIMEOUT_MS = 15000;
 const STATUS_TIMEOUT_MS = 8000;
 
-export const USER_AGENT = "Settleform/0.1 (NEAR-Hackathon; +https://nearhackathon.com)";
+export const USER_AGENT = "Settleform/0.1 (+https://settleform.vercel.app)";
 
 export function oneclickHeaders(): Record<string, string> {
   const headers: Record<string, string> = {

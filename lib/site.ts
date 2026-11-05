@@ -1,7 +1,7 @@
 /**
  * Single source of truth for the public origin.
  *
- * There is no custom domain yet. Set NEXT_PUBLIC_SITE_URL (or edit the fallback
+ * Live at https://settleform.vercel.app. Set NEXT_PUBLIC_SITE_URL (or edit the fallback
  * below) and metadataBase, canonical URLs and absolute asset URLs all move
  * together.
  */

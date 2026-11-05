@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
     try {
       const headers: Record<string, string> = {
         Accept: "application/json",
-        "User-Agent": "Settleform/0.1 (NEAR-Hackathon; +https://nearhackathon.com)",
+        "User-Agent": "Settleform/0.1 (+https://settleform.vercel.app)",
       };
       if (process.env.ONECLICK_JWT) headers.Authorization = "Bearer " + process.env.ONECLICK_JWT;
       const res = await fetch(ONECLICK_STATUS + "?depositAddress=" + encodeURIComponent(deposit), {

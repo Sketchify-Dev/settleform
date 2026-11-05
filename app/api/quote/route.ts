@@ -163,7 +163,7 @@ export async function POST(req: NextRequest) {
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
       Accept: "application/json",
-      "User-Agent": "Settleform/0.1 (NEAR-Hackathon; +https://nearhackathon.com)",
+      "User-Agent": "Settleform/0.1 (+https://settleform.vercel.app)",
     };
     if (process.env.ONECLICK_JWT) headers.Authorization = "Bearer " + process.env.ONECLICK_JWT;
 
