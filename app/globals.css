@@ -778,6 +778,20 @@ a:focus-visible {
   }
 }
 
+/* Narrow phones. The head carries a label, five progress marks and a date on
+   one line; below 400px that line is wider than the stub, so the marks and the
+   date drop to a second line together instead of pushing the page sideways. */
+@media (max-width: 400px) {
+  .inst-head {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .inst-progress span {
+    width: 12px;
+  }
+}
+
 /* Display type. The width axis is what makes a headline read as printed
    institution instead of as a screen heading. Balanced wrapping keeps the two
    authored lines from stranding a short word on either line. */

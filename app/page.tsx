@@ -97,7 +97,7 @@ const MISSING = [
     SEED_PHRASE +
     ", unpaid, with no deposit address and no transaction reference.",
   "No invoice has reached PAID from a real deposit, so the paid state you can scroll through here is the one path still unproven. One live conversion has settled, though: 0.5 USDC withdrawn to a NEAR account on 2026-11-04, through the same swap request the pay links send.",
-  "Nothing is deployed to a public URL. This runs locally, which is how a judge reproduces it.",
+  "The live build runs at settleform.vercel.app. Records live in local JSON files, not a database, so a fresh deploy starts from the seed.",
 ];
 
 function SectionHead({
@@ -149,7 +149,7 @@ export default function Home() {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, "\\u003c") }}
     />
-    <div className="pb-16">
+    <div className="pb-28 sm:pb-16">
       <a href="#main" className="skip-link">Skip to content</a>
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">

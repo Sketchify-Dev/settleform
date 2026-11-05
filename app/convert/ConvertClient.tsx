@@ -907,7 +907,7 @@ export default function ConvertClient({ sources }: { sources: SourceOption[] }) 
                         }))
                       )
                     : r.txRefs.map((ref) => ({ ref, chain: r.sourceChain }))).map(({ ref, chain }) => (
-                    <span key={ref} className="mono text-[11.5px] text-ink-soft">
+                    <span key={ref} className="mono min-w-0 break-all text-[11.5px] text-ink-soft">
                       {proofRef(ref, chain)}
                     </span>
                   ))}
