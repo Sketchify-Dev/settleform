@@ -1,0 +1,49 @@
+# Settleform
+
+> Cross-chain invoicing for freelancers who do not care about crypto. Create an
+> invoice, share a pay link, let the client pay with a supported token from a
+> supported chain, and receive USDC on NEAR.
+
+Built for NEAR HACKATHON (Nov 1-14, 2026). Primary track: realworld. Secondary: business, security.
+
+## What it actually does
+
+- A freelancer creates an invoice: client, amount, due date, line items, and a NEAR account that receives USDC.
+- Each invoice gets a public pay link at /pay/[id]. The client needs no login and installs nothing.
+- Source assets come only from data/supported-assets.json, verified against the 1Click API tokens endpoint. There is no free-text token entry.
+- Dry-run quotes preview the route (rate, expected USDC, 1Click fee) and are labeled as moving no funds. A dry run never returns a deposit address, whatever upstream sends.
+- Live quotes create a 1Click deposit address and poll swap status to SUCCESS, REFUNDED, or FAILED.
+- Invoice status, swap status, and refund status are three separate states. A REFUNDED swap never renders PAID.
+- A paid invoice renders a receipt with settlement amount and tx links, disables payment, exposes no deposit address, and exports one CSV row.
+- A separate converter at /convert does the swap without an invoice: any NEAR account, any supported token, USDC out, polling to SUCCESS, REFUNDED or FAILED. Finished swaps are filed into a public server history, verified live against 1Click before writing.
+
+## Pages
+
+- `/` landing page. The only indexable route.
+- `/invoices` invoice dashboard. Not indexable: this build has no auth and the list contains client names and amounts.
+- `/invoices/new` invoice creation form. Not indexable.
+- `/pay/[id]` capability URL per invoice, addressed by an unguessable 24-character id. Never linked from the site, never in the sitemap, and marked `noindex`.
+- `/convert` the converter: name a NEAR account, pick a token, watch the swap land; finished swaps file into the shared history. Not indexable.
+
+## API
+
+All routes are server-side. The 1Click JWT, if set, stays in the environment and is never sent to the browser.
+
+- `POST /api/invoices` creates an invoice. Validates client name, NEAR account format, a two-decimal amount greater than zero, currency against USD/EUR/GBP, a real calendar due date, and size caps.
+- `POST /api/quote` takes invoiceId, originAsset, dry, optional refundTo. 404 unknown invoice, 409 paid invoice or duplicate in-flight live payment, 400 unsupported asset or a missing or malformed live refund address. A live quote with no deposit address is refused rather than stored.
+- `GET /api/status?invoiceId=[id]` proxies 1Click status by stored deposit address. SUCCESS marks the invoice PAID server-side. REFUNDED and FAILED keep it UNPAID. A paid invoice is served from the record with the deposit address stripped.
+- `GET /api/export/[id]` returns the accountant CSV for one invoice, with cells quoted and formula-neutralised.
+- `GET /api/conversions` lists the shared conversion history, newest first. `POST /api/conversions/file` files one finished swap after reading it live from 1Click; running swaps are refused.
+
+Both write endpoints reject a mismatched `Origin` with 403, rate limit callers, and return `Cache-Control: no-store`.
+
+## Scope and honesty notes
+
+- Demo build. No mainnet customer funds move. Dry-run quotes are clearly labeled; reaching PAID in a demo requires either a real deposit or a seeded settlement record.
+- The invoice store is a local JSON file (data/invoices.json), git ignored because it holds real client names and amounts. A seed ships as data/invoices.example.json. The conversion history is a second JSON file (data/conversions.json, also git ignored) holding only on-chain facts; its seed is data/conversions.example.json.
+- Without a 1Click JWT an extra unauthenticated fee applies to quotes, currently 0.2%.
+- Not an accounting platform. Invoicing, payment tracking, settlement records, and CSV export only.
+
+## Repository
+
+Public repo URL to be set at submit time.

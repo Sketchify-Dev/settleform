@@ -1,0 +1,12 @@
+# Normalise line endings on checkin; check out native endings.
+* text=auto
+
+# Vector artwork stays diffable text; rasters are binary.
+*.svg text eol=lf
+*.png binary
+*.ico binary
+*.woff2 binary
+
+# Keep lockfiles and JSON stable across platforms.
+package-lock.json text eol=lf
+*.json text eol=lf

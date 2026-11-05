@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ab4d71398e083229d841a8f5",
+    "number": "SF-0001",
+    "client": "Acme Studio",
+    "freelancerNear": "intents.near",
+    "amount": "250",
+    "currency": "USD",
+    "dueDate": "2026-11-30",
+    "lineItems": [
+      {
+        "desc": "Design services",
+        "qty": 1,
+        "price": 250
+      }
+    ],
+    "status": "UNPAID",
+    "swapStatus": null,
+    "payment": null,
+    "createdAt": "2026-11-02T03:36:02.794Z",
+    "paidAt": null
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "depositAddress": "0xF856d5a31a12983d2EF352DDa01501ABc5D955eb",
+    "sourceSymbol": "ETH",
+    "sourceChain": "eth",
+    "amountInFormatted": "0.000220398536953085",
+    "amountOutFormatted": "0.5",
+    "settledUsdc": "0.5",
+    "withdrawFee": "0.005078",
+    "refundFee": "0.000035",
+    "destinationNear": "sketchify_dev.tg",
+    "destinationSymbol": "USDC",
+    "status": "SUCCESS",
+    "plain": "Settled. The USDC is in your NEAR account.",
+    "finishedAt": "2026-11-04T08:48:08.000Z",
+    "txRefs": [
+      "https://etherscan.io/tx/0x72abcd790d7e8bae234f8a81007709fe3574d50924deebadf630f812408e6eb7",
+      "https://nearblocks.io/txns/Hbse62PxpSope3axbYXSHbX35EzrEMUXQ6dq5dfEU62W"
+    ],
+    "legs": [
+      {
+        "label": "Deposit",
+        "links": [
+          "https://etherscan.io/tx/0x72abcd790d7e8bae234f8a81007709fe3574d50924deebadf630f812408e6eb7"
+        ]
+      },
+      {
+        "label": "Withdrawal to your account",
+        "links": [
+          "https://nearblocks.io/txns/Hbse62PxpSope3axbYXSHbX35EzrEMUXQ6dq5dfEU62W"
+        ]
+      }
+    ],
+    "refundReason": null,
+    "recordedAt": "2026-11-04T19:10:00.000Z"
+  }
+]
